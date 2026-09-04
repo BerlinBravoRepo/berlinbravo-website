@@ -1,0 +1,235 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Berlin Bravo — an applied-AI sandbox and incubator in Ireland. Frontier models, open source, agentic systems. First graduate: Frankly.">
+<title>Berlin Bravo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Space+Mono:wght@400;700&display=swap">
+</head><body>
+<style>
+:root{
+  --ink:#eef3ee; --mut:#8fa397; --dim:#5c6f63;
+  --bg:#0a0f0c; --bg2:#0e1510; --line:rgba(160,190,170,.14);
+  --green:#37c978; --green-dim:#1d7a49; --red:#e03a2e;
+  --mono:'Space Mono',ui-monospace,Menlo,monospace;
+  --sans:'Archivo',-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:340;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono)}
+.label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+
+/* ---- nav ---- */
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:linear-gradient(rgba(10,15,12,.92),rgba(10,15,12,.75) 70%,transparent);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;gap:12px;height:64px}
+.flag{width:22px;height:15px;background:var(--red);flex:none;
+  clip-path:polygon(0 0,100% 0,72% 50%,100% 100%,0 100%)}
+nav b{font-weight:750;letter-spacing:.02em;font-size:15px}
+nav .mono{margin-left:auto;font-size:11px;color:var(--dim);letter-spacing:.18em}
+
+/* ---- hero ---- */
+header{position:relative;padding:150px 0 90px;overflow:hidden;background:var(--bg)}
+#topo{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.hero{position:relative}
+.hero .label{color:var(--green);opacity:0;animation:rise .8s .1s forwards}
+h1{font-weight:860;font-stretch:112%;letter-spacing:-.015em;line-height:.96;
+  font-size:clamp(56px,11vw,124px);margin:18px 0 26px;text-wrap:balance;
+  opacity:0;animation:rise .8s .25s forwards}
+h1 .b{color:var(--green)}
+.hero p{max-width:34em;font-size:19px;color:var(--mut);opacity:0;animation:rise .8s .45s forwards}
+.hero .cta{display:inline-block;margin-top:38px;font-family:var(--mono);font-size:13px;
+  letter-spacing:.14em;color:var(--ink);border:1px solid var(--line);padding:13px 22px;
+  border-radius:2px;opacity:0;animation:rise .8s .6s forwards}
+.hero .cta:hover{border-color:var(--green);color:var(--green);text-decoration:none}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero *,h1{animation-duration:.01s !important}}
+
+/* ---- sections ---- */
+section{padding:88px 0;border-top:1px solid var(--line);background:var(--bg)}
+section.alt{background:var(--bg2)}
+h2{font-weight:780;font-stretch:108%;font-size:clamp(28px,4.4vw,44px);letter-spacing:-.01em;
+  margin:14px 0 20px;text-wrap:balance;line-height:1.12}
+.lede{max-width:36em;color:var(--mut);font-size:17.5px}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);margin-top:52px}
+.pillar{background:var(--bg);padding:28px 24px}
+.alt .pillar{background:var(--bg2)}
+.pillar .mono{font-size:11px;color:var(--green);letter-spacing:.18em}
+.pillar h3{font-weight:640;font-size:18px;margin:10px 0 8px}
+.pillar p{font-size:14.5px;color:var(--mut)}
+
+/* frankly card */
+.grad{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;margin-top:24px}
+@media(max-width:760px){.grad{grid-template-columns:1fr}}
+.phone{justify-self:center;width:250px;border:1px solid var(--line);border-radius:34px;
+  padding:10px;background:linear-gradient(170deg,#101a13,#0a0f0c)}
+.phone .screen{border-radius:26px;background:#0c120e;padding:18px 14px;min-height:380px;
+  display:flex;flex-direction:column;gap:12px}
+.bubble{background:rgba(160,190,170,.08);border-radius:14px;padding:10px 12px;font-size:12.5px;color:var(--mut)}
+.bubble.me{align-self:flex-end;background:rgba(55,201,120,.14);color:var(--ink)}
+.fmark{width:26px;height:26px;border-radius:7px;background:var(--green);color:#06130b;
+  display:grid;place-items:center;font-weight:800;font-size:14px}
+.gallery{display:flex;gap:6px}
+.gallery i{height:52px;flex:1;border-radius:8px;display:block}
+.gallery i:nth-child(1){background:linear-gradient(160deg,#2b6f9e,#7fb6d9)}
+.gallery i:nth-child(2){background:linear-gradient(200deg,#5b7a4e,#8faa6e)}
+.gallery i:nth-child(3){background:linear-gradient(180deg,#6b5537,#a3865b)}
+.tag{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.14em}
+
+/* ireland strip */
+.strip{display:flex;flex-wrap:wrap;gap:40px;margin-top:46px}
+.stat{min-width:150px}
+.stat b{display:block;font-weight:800;font-stretch:110%;font-size:38px;letter-spacing:-.01em;color:var(--ink)}
+.stat span{font-size:13px;color:var(--dim)}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 72px;background:var(--bg)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:28px;align-items:center}
+footer .flag{width:18px;height:12px}
+footer p{font-size:13px;color:var(--dim)}
+footer .mono{margin-left:auto;font-size:11px;letter-spacing:.18em;color:var(--dim)}
+@media(max-width:640px){footer .mono{margin-left:0}}
+</style>
+
+<nav><div class="wrap">
+  <span class="flag" aria-hidden="true"></span><b>BERLIN&nbsp;BRAVO</b>
+  <span class="mono">DUBLIN · 53.35°N&nbsp;6.26°W</span>
+</div></nav>
+
+<header>
+  <canvas id="topo" aria-hidden="true"></canvas>
+  <div class="wrap hero">
+    <div class="label">// An applied-AI sandbox, made in Ireland</div>
+    <h1>Build at the edge.<br>Ship what <span class="b">survives.</span></h1>
+    <p>Berlin Bravo is an incubator for AI-first products — a test platform where
+    foundation models, open-source models and agentic systems are pushed past their
+    comfort zone, and the ideas that hold up become companies.</p>
+    <a class="cta" href="#frankly">FIRST OUT OF THE SANDBOX ↓</a>
+  </div>
+</header>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="label">01 / The sandbox</div>
+    <h2>Not a lab. Not a fund.<br>A proving ground.</h2>
+    <p class="lede">Most AI demos die on contact with a real household, a real
+    workload, a real Tuesday. We build in the opposite direction: real users from
+    day one, frontier models held to shipping standards, and an engineering culture
+    where a claim doesn’t count until a device in someone’s hand proves it.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="mono">FOUNDATION</div>
+        <h3>Frontier models, unmuted</h3>
+        <p>We let the strongest models do what they’re capable of — and build the
+        verification, safety and taste around them, not caps on top of them.</p></div>
+      <div class="pillar"><div class="mono">OPEN</div>
+        <h3>Open-source, on-device</h3>
+        <p>Open weights and on-device intelligence where privacy demands it.
+        The right model for the moment, never a religion about whose.</p></div>
+      <div class="pillar"><div class="mono">AGENTIC</div>
+        <h3>Systems that do the work</h3>
+        <p>Multi-agent build fleets, autonomous device testing, evidence-gated
+        releases. Our own tooling is our first product testbed.</p></div>
+      <div class="pillar"><div class="mono">IRISH</div>
+        <h3>Grown in Ireland</h3>
+        <p>Leveraging one of Europe’s densest high-tech workforces to build
+        AI-first companies from Ireland, for everywhere.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="frankly">
+  <div class="wrap">
+    <div class="label">02 / First graduate</div>
+    <div class="grad">
+      <div>
+        <h2>Frankly — a private AI for your family.</h2>
+        <p class="lede">One assistant the whole household shares: it remembers what
+        matters, keeps family data in the family, answers richly — and works the
+        same whether you type, send a voice note, or just call it. Currently in
+        private testing with real families.</p>
+        <p class="lede" style="margin-top:14px">Frankly is what the sandbox is for:
+        an idea pushed until it survived. Many more are queued behind it.</p>
+      </div>
+      <div class="phone" aria-label="Illustration of the Frankly app">
+        <div class="screen">
+          <div class="fmark">F</div>
+          <div class="bubble me">Things to do in Wexford?</div>
+          <div class="bubble">Climb the world’s oldest working lighthouse at Hook
+          Head, walk the dunes at Curracloe…</div>
+          <div class="gallery"><i></i><i></i><i></i></div>
+          <div class="tag">LIVE ANSWER · IMAGES · FAMILY-PRIVATE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="label">03 / Why here, why now</div>
+    <h2>Ireland is the right place to bet on this.</h2>
+    <p class="lede">A generation of engineers trained inside the world’s biggest
+    technology companies, a time zone bridging two continents, and a moment where
+    the cost of trying ambitious software ideas has collapsed. Berlin Bravo exists
+    to convert that into products.</p>
+    <div class="strip">
+      <div class="stat"><b>AI-first</b><span>from the first commit</span></div>
+      <div class="stat"><b>Evidence-gated</b><span>nothing ships on vibes</span></div>
+      <div class="stat"><b>Device-proven</b><span>real hardware, real users</span></div>
+      <div class="stat"><b>Independent</b><span>built to outlast the hype cycle</span></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span class="flag" aria-hidden="true"></span>
+  <p>Berlin Bravo Ltd — Ireland · <a href="mailto:info@berlinbravo.com">info@berlinbravo.com</a></p>
+  <span class="mono">B · BRAVO · «I AM TAKING ON CARGO»</span>
+</div></footer>
+
+<script>
+(function(){
+  const c=document.getElementById('topo'),x=c.getContext('2d');
+  let W,H;function size(){W=c.width=c.offsetWidth*devicePixelRatio;H=c.height=c.offsetHeight*devicePixelRatio}
+  size();addEventListener('resize',()=>{size();draw()});
+  function n(ix,iy){ // cheap value noise
+    const s=Math.sin(ix*127.1+iy*311.7)*43758.5453;return s-Math.floor(s);
+  }
+  function smooth(fx,fy){
+    const ix=Math.floor(fx),iy=Math.floor(fy),tx=fx-ix,ty=fy-iy;
+    const a=n(ix,iy),b=n(ix+1,iy),cc=n(ix,iy+1),d=n(ix+1,iy+1);
+    const u=tx*tx*(3-2*tx),v=ty*ty*(3-2*ty);
+    return a+(b-a)*u+(cc-a)*v+(a-b-cc+d)*u*v;
+  }
+  function field(px,py){
+    return smooth(px*2.2,py*2.2)*.6+smooth(px*5,py*5)*.3+smooth(px*11,py*11)*.1;
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    const levels=14,step=8*devicePixelRatio;
+    for(let l=0;l<levels;l++){
+      const iso=l/levels;
+      x.beginPath();
+      for(let py=0;py<H;py+=step){
+        let pen=false;
+        for(let px=0;px<W;px+=step){
+          const v=field(px/W,py/H);
+          const hit=Math.abs(v-iso)<0.012;
+          if(hit&&!pen){x.moveTo(px,py);pen=true}
+          else if(hit){x.lineTo(px,py)}
+          else pen=false;
+        }
+      }
+      const green=l%4===0;
+      x.strokeStyle=green?'rgba(55,201,120,0.20)':'rgba(140,170,150,0.10)';
+      x.lineWidth=devicePixelRatio*(green?1.1:0.7);
+      x.stroke();
+    }
+  }
+  draw();
+})();
+</script>
+</body></html>
